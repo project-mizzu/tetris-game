@@ -9,14 +9,14 @@ const ScreenFrame = styled.div`
   left: 2.56rem;
   background-color: #bca372;
   border: 0.2rem solid #fdf6d9d2;
-  clip-path: polygon(100% 0, 100% 100%, 48% 100%, 40% 90%, 0 90%, 0% 0%);
+  clip-path: polygon(100% 0, 100% 100%, 49% 100%, 40% 89%, 0 89%, 0% 0%);
   z-index: 1;
   &:before {
     content: '';
     width: 27rem;
     height: 21rem;
     position: absolute;
-    top: 0.5rem;
+    top: 0.52rem;
     left: 0.5rem;
     background-color: #25221d;
     clip-path: polygon(100% 0, 100% 100%, 49% 100%, 40% 89%, 0 89%, 0% 0%);

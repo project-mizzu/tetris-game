@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
+import bgm from '../assets/music/bgm.mp3';
 
 interface BtnTypes {
   rotate: string;
@@ -132,6 +133,20 @@ const RotateText = styled.svg`
 `;
 
 function Buttons() {
+  const [play, setPlay] = useState(false);
+  const audioRef = useRef(new Audio(bgm));
+
+  const musicStartPause = () => {
+    setPlay((prev) => !prev);
+    audioRef.current.volume = 0.2;
+    if (play) {
+      audioRef.current.pause();
+    }
+    if (!play) {
+      audioRef.current.play();
+    }
+  };
+
   return (
     <BtnArea>
       <ArrowBtnWrap>
@@ -145,7 +160,7 @@ function Buttons() {
       <MenuArea>
         <MenuBtnWrap>
           <MenuBtnGroup>
-            <MenuBtn />
+            <MenuBtn onClick={musicStartPause} />
             <p>MUSIC</p>
           </MenuBtnGroup>
           <MenuBtnGroup>
